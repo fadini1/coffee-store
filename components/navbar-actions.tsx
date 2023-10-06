@@ -6,7 +6,9 @@ import { ShoppingBag } from 'lucide-react';
 
 import { useRouter } from 'next/navigation';
 
-import Button from "@/components/ui/button";
+import { ThemeToggle } from '@/components/toggle-theme';
+
+import Button from "@/components/ui/my-button";
 
 import useCart from '@/hooks/use-cart';
 
@@ -28,6 +30,8 @@ const NavbarActions = () => {
     <div 
       className="ml-auto flex items-center gap-x-2"
     >
+      <ThemeToggle />
+
       <Button 
         className='flex items-center rounded-full bg-black px-4 py-2'
         onClick={() => router.push('/cart')}

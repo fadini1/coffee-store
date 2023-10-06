@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 
 import { Urbanist } from 'next/font/google';
 
+import { ThemeProvider } from '@/providers/theme-provider';
+
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 
@@ -25,11 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ModalProvider />
-        <ToastProvider />
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <ModalProvider />
+          <ToastProvider />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
