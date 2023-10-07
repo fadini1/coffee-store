@@ -39,10 +39,11 @@ const NavbarActions = () => {
       >
         <ShoppingBag 
           size={20}
-          color='white'
+          className='text-white dark:text-zinc-900'
         />
         <span 
-          className='ml-2 text-sm font-semibold text-white'
+          className='ml-2 text-sm font-semibold text-white 
+          dark:text-zinc-900'
         >
           {cart.items.length}
         </span>
