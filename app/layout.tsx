@@ -27,7 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ThemeProvider>
+        <ThemeProvider
+          enableSystem
+          attribute='class'
+          defaultTheme='system'
+        >
           <ModalProvider />
           <ToastProvider />
           <Navbar />
