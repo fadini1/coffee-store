@@ -51,7 +51,7 @@ const Summary = () => {
       sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5'
     >
       <h2
-        className='text-zinc-900 text-lg font-medium'
+        className='text-zinc-900 dark:text-white text-lg font-medium'
       >
         Order Summary
       </h2>
@@ -64,7 +64,7 @@ const Summary = () => {
           border-zinc-200 pt-4'
         >
           <div
-            className='font-medium text-zinc-900'
+            className='font-medium text-zinc-900 dark:text-white'
           >
             Order Total
           </div>
