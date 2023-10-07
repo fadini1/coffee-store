@@ -28,7 +28,7 @@ const NavbarActions = () => {
 
   return (
     <div 
-      className="ml-auto flex items-center gap-x-2"
+      className="ml-auto flex items-center space-x-2"
     >
       <ThemeToggle />
 
