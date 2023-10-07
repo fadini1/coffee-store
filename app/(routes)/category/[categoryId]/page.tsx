@@ -38,7 +38,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
   });
 
   return (
-    <div className="bg-white">
+    <div>
       <Container>
         <Billboard 
           data={category.billboard}
