@@ -33,7 +33,8 @@ const NavbarActions = () => {
       <ThemeToggle />
 
       <Button 
-        className='flex items-center rounded-full bg-black px-4 py-2'
+        className='flex items-center rounded-full bg-black dark:bg-white 
+        px-4 py-2'
         onClick={() => router.push('/cart')}
       >
         <ShoppingBag 
