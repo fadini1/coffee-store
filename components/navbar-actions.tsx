@@ -38,11 +38,11 @@ const NavbarActions = () => {
         onClick={() => router.push('/cart')}
       >
         <ShoppingBag 
-          size={20}
-          className='text-white dark:text-zinc-900'
+          size={18}
+          className='text-white dark:text-black'
         />
         <span 
-          className='ml-2 text-sm font-semibold text-white 
+          className='ml-1 text-sm font-semibold text-white 
           dark:text-zinc-900'
         >
           {cart.items.length}
