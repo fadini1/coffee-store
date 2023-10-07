@@ -29,7 +29,7 @@ const CartPage = () => {
           className="px-4 py-16 sm:px-6 lg:px-8"
         >
           <h1
-            className="text-3xl text-black font-bold"
+            className="text-3xl text-black dark:text-white font-bold"
           >
             Shopping Cart
           </h1>

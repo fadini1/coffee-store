@@ -47,7 +47,7 @@ const Summary = () => {
 
   return (
     <div
-      className='mt-16 rounded-lg bg-zinc-50 px-4 py-6
+      className='mt-16 rounded-lg px-4 py-6
       sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5'
     >
       <h2
