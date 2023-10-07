@@ -23,9 +23,7 @@ const CartPage = () => {
   }
 
   return (
-    <div
-      className="bg-white"
-    >
+    <div>
       <Container>
         <div
           className="px-4 py-16 sm:px-6 lg:px-8"
