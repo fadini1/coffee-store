@@ -57,13 +57,14 @@ const Modal: React.FC<ModalProps> = ({
               >
                 <div
                   className='relative flex items-center w-full px-4  
-                  overflow-hidden pb-8 pt-14 shadow-2xl
-                  sm:px-6 sm:pt-8 md:p-6 lg:p-8'
+                  overflow-hidden dark:bg-black bg-white pb-8 pt-14
+                  shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8'
                 >
                   <div
                     className='absolute right-4 top-4'
                   >
                     <IconButton
+                      className='text-black'
                       icon={<X size={15} />} 
                       onClick={onClose}
                     />
