@@ -22,12 +22,12 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-zinc-900">
+      <h1 className="text-3xl font-bold text-zinc-900 dark:text-white">
         {data.name}
       </h1>
 
       <div className="mt-2 flex items-end justify-between">
-        <p className="text-2xl text-zinc-900">
+        <p className="text-2xl text-zinc-900 dark:text-white">
           <Currency 
             value={data?.price}
           />
@@ -38,7 +38,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
       <div className="flex flex-col gap-y-2">
         <div className="flex items-center gap-x-2">
-          <h3 className="font-semibold text-black">
+          <h3 className="font-semibold text-black dark:text-white">
             Size:
           </h3>
 
@@ -54,7 +54,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         </div>
 
         <div className="flex items-center gap-x-2">
-          <h3 className="font-semibold text-black">
+          <h3 className="font-semibold text-black dark:text-white">
             Color:
           </h3>
 

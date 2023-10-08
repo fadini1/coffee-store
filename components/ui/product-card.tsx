@@ -43,7 +43,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
 
   return (
     <div 
-    className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
+    className="group cursor-pointer rounded-xl border p-3 space-y-4"
     onClick={handleClick}>
       {/* IMAGES AND ACTIONS */}
 
