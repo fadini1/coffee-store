@@ -47,7 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
     onClick={handleClick}>
       {/* IMAGES AND ACTIONS */}
 
-      <div className="aspect-square rounded-xl bg-zinc-100 relative">
+      <div className="aspect-square rounded-xl relative">
         <Image 
           fill
           alt="Image"
