@@ -47,7 +47,8 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
         <div
           className='absolute z-10 right-0 top-0'
         >
-          <IconButton 
+          <IconButton
+            className='text-black' 
             icon={
               <X 
                 size={15} 
@@ -64,7 +65,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
             className='flex justify-between'
           >
             <p
-              className='text-black text-lg font-semibold'
+              className='text-black dark:text-white text-lg font-semibold'
             >
               {data.name}
             </p>
