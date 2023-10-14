@@ -33,16 +33,16 @@ const NavbarActions = () => {
       <ThemeToggle />
 
       <Button 
-        className='flex items-center rounded-full bg-black dark:bg-white 
-        px-4 py-2'
+        className='flex items-center rounded-lg bg-zinc-900 dark:bg-zinc-100 
+        px-4 py-1.5'
         onClick={() => router.push('/cart')}
       >
         <ShoppingBag 
-          size={18}
+          size={19}
           className='text-white dark:text-black'
         />
         <span 
-          className='ml-1 text-sm font-semibold text-white 
+          className='ml-1 mt-0.5 font-semibold text-white 
           dark:text-zinc-900'
         >
           {cart.items.length}

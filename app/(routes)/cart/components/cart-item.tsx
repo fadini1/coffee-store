@@ -26,10 +26,11 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
 
   return (
     <li
-      className='flex py-6 border-b'
+      className='flex py-6 px-8 border-b dark:bg-zinc-900 rounded-lg
+      dark:hover:bg-zinc-800 transition duration-300'
     > 
       <div
-        className='relative rounded-md h-24 w-24 sm:h-48 sm:w-48
+        className='relative rounded-full h-24 w-24 sm:h-48 sm:w-48
         overflow-hidden'
       >
         <Image 
@@ -72,16 +73,20 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
           </div>
 
           <div
-            className='mt-0.5 flex text-sm'
+            className='mt-0.5 flex text-sm gap-1'
           >
             <p
-              className='text-zinc-500'
+              className='text-zinc-100 bg-zinc-900 px-3 py-1 rounded-lg
+              font-medium hover:bg-zinc-700 transition dark:bg-zinc-100
+              dark:hover:bg-zinc-300 dark:text-zinc-900 dark:font-semibold'
             >
               {data.color.name}
             </p>
 
             <p
-              className='text-zinc-500 ml-4 pl-4 border-l border-zinc-200'
+              className='text-zinc-100 bg-zinc-900 px-3 py-1 rounded-lg
+              font-medium hover:bg-zinc-700 transition dark:bg-zinc-100
+              dark:hover:bg-zinc-300 dark:text-zinc-900 dark:font-semibold'
             >
               {data.size.name}
             </p>

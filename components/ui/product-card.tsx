@@ -43,7 +43,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
 
   return (
     <div 
-    className="group cursor-pointer rounded-xl border p-3 space-y-4"
+    className="group cursor-pointer rounded-xl border p-3 space-y-4
+    hover:scale-105 transition"
     onClick={handleClick}>
       {/* IMAGES AND ACTIONS */}
 

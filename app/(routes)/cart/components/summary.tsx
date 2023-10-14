@@ -48,7 +48,7 @@ const Summary = () => {
   return (
     <div
       className='mt-16 rounded-lg px-4 py-6
-      sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5'
+      sm:p-6 lg:p-5 lg:mt-0 lg:col-span-5'
     >
       <h2
         className='text-zinc-900 dark:text-white text-lg font-medium'
@@ -57,11 +57,11 @@ const Summary = () => {
       </h2>
 
       <div
-        className='mt-6 space-y-4'
+        className='mt-1 space-y-4'
       >
         <div
           className='flex items-center justify-between border-t
-          border-zinc-200 pt-4'
+          border-zinc-200 pt-1'
         >
           <div
             className='font-medium text-zinc-900 dark:text-white'

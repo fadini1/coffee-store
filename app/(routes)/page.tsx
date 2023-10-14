@@ -4,6 +4,9 @@ import Container from "@/components/ui/container";
 
 import getProducts from "@/actions/get-products";
 import getBillboard from "@/actions/get-billboard";
+import AboutUs from "@/components/about-us";
+import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
 
 export const revalidate = 0;
 
@@ -24,6 +27,12 @@ const HomePage = async () => {
             items={products}
           />
         </div>
+
+        <AboutUs />
+
+        <Testimonials />
+
+        <Contact />
       </div>
     </Container>
   )
