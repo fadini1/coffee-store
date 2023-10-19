@@ -10,13 +10,20 @@ import person04 from '@/public/images/testimonials/person04.png';
 const Testimonials = () => {
   return (
     <div
+      id="testimonials"
       className="px-10"
     >
       <h1
-        className="text-3xl font-bold pb-6"
+        className="text-3xl font-bold"
       >
         Testimonials
       </h1>
+
+      <h3
+        className="pb-6 font-bold text-zinc-500 -mt-0.5"
+      >
+        What our clients think of us!
+      </h3>
 
       <div
         className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3

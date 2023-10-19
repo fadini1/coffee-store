@@ -8,9 +8,11 @@ import { useRouter } from 'next/navigation';
 
 import { ThemeToggle } from '@/components/toggle-theme';
 
-import Button from "@/components/ui/my-button";
+import MyButton from "@/components/ui/my-button";
 
 import useCart from '@/hooks/use-cart';
+import Link from 'next/link';
+import { Button } from './ui/button';
 
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -30,9 +32,47 @@ const NavbarActions = () => {
     <div 
       className="ml-auto flex items-center space-x-2"
     >
+      <div
+        className='flex items-center text-zinc-500 pr-4 gap-2
+        dark:text-zinc-400'
+      >
+        <Button
+          size='sm'
+          variant='outline'
+        >
+          <Link
+            href='#about-us'
+          >
+            About Us
+          </Link>
+        </Button>
+
+        <Button
+          size='sm'
+          variant='outline'
+        >
+          <Link
+            href='#testimonials'
+          >
+            Testimonials
+          </Link>
+        </Button>
+
+        <Button
+          size='sm'
+          variant='outline'
+        >
+          <Link
+            href='#contact'
+          >
+            Contact
+          </Link>
+        </Button>
+      </div>
+
       <ThemeToggle />
 
-      <Button 
+      <MyButton 
         className='flex items-center rounded-lg bg-zinc-900 dark:bg-zinc-100 
         px-4 py-1.5'
         onClick={() => router.push('/cart')}
@@ -47,7 +87,7 @@ const NavbarActions = () => {
         >
           {cart.items.length}
         </span>
-      </Button>
+      </MyButton>
     </div>
   )
 }

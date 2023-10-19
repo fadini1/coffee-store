@@ -26,15 +26,21 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       items-center align-center dark:hover:bg-zinc-800 transition
       hover:bg-zinc-200 duration-300 group"
     >
-      <Image 
-        alt="TestimonialPerson"
-        className="h-28 w-28 rounded-full object-cover object-center
-        border-2 dark:hover:border-zinc-300 hover:border-zinc-600 transition
-        border-zinc-900 dark:border-zinc-100 shadow-md shadow-zinc-900
-        hover:shadow-zinc-600 duration-300 dark:shadow-zinc-100
-        dark:hover:shadow-zinc-300 hover:opacity-90"
-        src={reviewerImage}
-      />
+      <div
+        className="border-2 rounded-full dark:hover:border-zinc-100
+        dark:border-zinc-400 transition shadow-md shadow-zinc-700
+        hover:shadow-zinc-900 duration-200 dark:shadow-zinc-400
+        dark:hover:shadow-zinc-100 border-zinc-700 ease-in
+        hover:border-zinc-900"
+      >
+        <Image 
+          alt="TestimonialPerson"
+          className="h-28 w-28 rounded-full object-cover object-center
+          transition dark:opacity-90 hover:dark:opacity-100 duration-200
+          opacity-95 hover:opacity-100"
+          src={reviewerImage}
+        />
+      </div>
 
       <h1
         className="pt-2 -mb-1 text-2xl font-semibold"

@@ -35,6 +35,7 @@ const AboutUs = () => {
 
   return (
     <div
+      id="about-us"
       className="px-10"
     >
       <h1
@@ -43,8 +44,14 @@ const AboutUs = () => {
         About Us
       </h1>
 
+      <h3
+        className="pb-3 font-bold text-zinc-500 -mt-0.5"
+      >
+        Here&apos;s a little peek into our background!
+      </h3>
+
       <p
-        className="max-w-lg py-4"
+        className="max-w-lg pb-6"
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Velit minus, dicta error dolor excepturi minima neque saepe
@@ -54,17 +61,23 @@ const AboutUs = () => {
       
       <div className="flex items-center justify-center relative
       w-72 h-[450px] rounded-lg">
-        <Image 
-          alt="about-us-company"  
-          className='object-cover object-center rounded-lg
-          cursor-pointer h-full w-full dark:border-zinc-300
-          border-2 shadow-md dark:shadow-zinc-300
-          dark:hover:shadow-zinc-100 transition duration-300
-          dark:hover:border-zinc-100 dark:hover:opacity-80
-          hover:opacity-95 border-zinc-900 hover:border-zinc-700
-          shadow-zinc-700 hover:shadow-zinc-700'
-          src={images[currentIndex]}
-        />
+        <div
+          className="w-72 h-[450px] border-2 rounded-lg
+          dark:border-zinc-400 hover:dark:border-zinc-100
+          transition duration-200 shadow-md dark:shadow-zinc-400
+          dark:hover:shadow-zinc-100 ease-in
+          border-zinc-900 shadow-zinc-900 hover:border-zinc-800
+          hover:shadow-zinc-800"
+        >
+          <Image 
+            alt="about-us-company"  
+            className='object-cover object-center rounded-lg
+            cursor-pointer h-full w-full dark:border-zinc-300
+            transition duration-300 dark:hover:opacity-80
+            hover:opacity-95 shadow-zinc-700 hover:shadow-zinc-700'
+            src={images[currentIndex]}
+          />
+        </div>
 
         {!isFirstImage && (
           <ArrowLeftCircle 
