@@ -4,6 +4,10 @@ import { Resend } from 'resend';
 
 import { getErrorMessage } from '@/lib/utils';
 
+import React from 'react';
+
+import ContactFormEmail from '@/email/contact-form-email';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (FormData: FormData) => {
@@ -36,17 +40,18 @@ export const sendEmail = async (FormData: FormData) => {
     }
   };
 
-  try {
-    await resend.emails.send({
-      from: `New Message from ${name} <onboarding@resend.dev>`,
+  await resend.emails.send({
+      from: `[SUNSET] New Message from ${name} <onboarding@resend.dev>`,
       to: 'fodriniagustin@gmail.com',
       subject: subject,
-      text: message,
-      reply_to: email
+      reply_to: email,
+      react: React.createElement(
+        ContactFormEmail,
+        {
+          name: name,
+          email: email,
+          message: message
+        }
+      )
     });
-  } catch (error) {
-    return {
-      error: getErrorMessage(error)
-    }
-  }
 };
