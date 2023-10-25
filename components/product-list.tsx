@@ -5,15 +5,26 @@ import ProductCard from "@/components/ui/product-card";
 
 interface ProductListProps {
   title: string;
+  subtitle?: string;
 
   items: Product[];
 }
 
-const ProductList: React.FC<ProductListProps> = ({ title, items }) => {
+const ProductList: React.FC<ProductListProps> = ({
+  title, 
+  items,
+  subtitle 
+}) => {
   return (
-    <div className="space-y-4 px-6 sm:px-0">
+    <div className="px-6 sm:px-0">
       <h3 className="font-bold text-3xl">
         {title}
+      </h3>
+
+      <h3
+        className="pb-6 font-bold text-zinc-500 -mt-0.5"
+      >
+        {subtitle}
       </h3>
 
       {items.length === 0 && <NoResults />}
@@ -28,7 +39,9 @@ const ProductList: React.FC<ProductListProps> = ({ title, items }) => {
         ))}
       </div>
 
-      <hr />
+      <hr 
+        className="mt-4"
+      />
     </div>
   )
 }

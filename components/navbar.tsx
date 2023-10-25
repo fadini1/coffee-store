@@ -33,7 +33,8 @@ const Navbar = async () => {
 
             <div
               className="dark:hover:bg-zinc-100 hover:bg-zinc-200
-              dark:bg-zinc-300 transition duration-300 rounded-full p-1 mb-1"
+              dark:bg-zinc-300 transition duration-300 rounded-full p-1 mb-1
+              hidden md:block"
             >
               <Image 
                 alt="logo"

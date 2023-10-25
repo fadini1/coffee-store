@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 import TestimonialCard from "@/components/testimonial-card";
 
 import person01 from '@/public/images/testimonials/person01.png';
@@ -9,9 +11,13 @@ import person04 from '@/public/images/testimonials/person04.png';
 
 const Testimonials = () => {
   return (
-    <div
+    <motion.div
       id="testimonials"
       className="px-10"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1}}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
     >
       <h1
         className="text-3xl font-bold"
@@ -75,7 +81,7 @@ const Testimonials = () => {
       <hr 
         className="mt-4"
       />
-    </div>
+    </motion.div>
   )
 }
 

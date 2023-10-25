@@ -32,7 +32,9 @@ const ContactFormEmail: React.FC<ContactFormEmailProps> = ({
       </Preview>
 
       <Tailwind>
-        <Body>
+        <Body
+          className='bg-zinc-100'
+        >
           <Container>
             <Section>
               <Heading>

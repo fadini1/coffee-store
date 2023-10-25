@@ -2,9 +2,7 @@
 
 import Image, { StaticImageData } from "next/image";
 
-import DummyTestImage from '@/public/images/shop/coffee-shop-01.png';
 import { Star } from "lucide-react";
-import { Image as image2 } from "@/types";
 
 interface TestimonialCardProps {
   reviewerName: string;

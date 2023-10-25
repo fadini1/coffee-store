@@ -33,8 +33,8 @@ export default function RootLayout({
           attribute='class'
           defaultTheme='system'
         >
-          <ModalProvider />
           <ToastProvider />
+          <ModalProvider />
           <Navbar />
           <Providers>
             {children}

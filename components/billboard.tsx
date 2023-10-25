@@ -6,16 +6,29 @@ interface BillboardProps {
 
 const Billboard: React.FC<BillboardProps> = ({ data }) => {
   return (
-    <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
+    <div className="w-full overflow-hidden max-w-none">
       <div 
-      className="rounded-xl relative overflow-hidden bg-cover
-      aspect-square md:aspect-[2.4/1]"
-      style={{ backgroundImage: `url(${data?.imageUrl})` }}>
+        className="relative overflow-hidden bg-cover
+        aspect-square md:aspect-[2.4/1] opacity-70"
+        style={{ backgroundImage: `url(${data?.imageUrl})` }}
+      >
         <div className="h-full w-full flex flex-col justify-center items-center
         text-center gap-y-8">
-          <div className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-          max-w-xs sm:max-w-xl">
-            {data?.label}
+          <div className="flex flex-col gap-2 items-center">
+            <p
+              className="font-bold text-3xl sm:text-4xl 
+              md:text-5xl lg:text-7xl max-w-xs sm:max-w-xl
+              text-zinc-900"
+            >
+              {data?.label}
+            </p>
+            
+            <p
+              className="max-w-sm font-medium text-xl text-white"
+            >
+              We are the Top-Rated Coffee Shop in the U.S.
+              Delivering the Best Coffee since 1890
+            </p>
           </div>
         </div>
       </div>

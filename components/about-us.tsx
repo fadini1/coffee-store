@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
+import { ArrowLeftCircle, ArrowRightCircle, Dot } from "lucide-react";
+
 import Image from "next/image";
 
 import StoreImage01 from '@/public/images/shop/coffee-shop-01.png';
 import StoreImage02 from '@/public/images/shop/coffee-shop-02.png';
 import StoreImage03 from '@/public/images/shop/coffee-shop-03.png';
 import StoreImage04 from '@/public/images/shop/coffee-shop-04.png';
-import { ArrowLeftCircle, ArrowRightCircle, Dot } from "lucide-react";
 
 const AboutUs = () => {
   let [currentIndex, setCurrentIndex] = useState(0);
@@ -34,9 +37,13 @@ const AboutUs = () => {
   }
 
   return (
-    <div
+    <motion.div
       id="about-us"
       className="px-10"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1}}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
     >
       <h1
         className="text-3xl font-bold"
@@ -139,7 +146,7 @@ const AboutUs = () => {
       </div>
       
       <hr className="my-6" />
-    </div>
+    </motion.div>
   )
 }
 

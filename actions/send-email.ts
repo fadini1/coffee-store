@@ -40,7 +40,10 @@ export const sendEmail = async (FormData: FormData) => {
     }
   };
 
-  await resend.emails.send({
+  let data;
+
+  try {
+    data = await resend.emails.send({
       from: `[SUNSET] New Message from ${name} <onboarding@resend.dev>`,
       to: 'fodriniagustin@gmail.com',
       subject: subject,
@@ -54,4 +57,13 @@ export const sendEmail = async (FormData: FormData) => {
         }
       )
     });
+  } catch (error: unknown) {
+    return {
+      error: getErrorMessage(error)
+    };
+  }
+
+  return {
+    data
+  };
 };

@@ -2,14 +2,11 @@
 
 import { useState } from "react";
 
-import { FaPaperPlane } from 'react-icons/fa';
-
 import { motion } from 'framer-motion';
 
 import { sendEmail } from "@/actions/send-email";
 
 import { 
-  Button,
   FormControl,
   FormErrorIcon,
   FormErrorMessage,
@@ -17,6 +14,10 @@ import {
   Input, 
   Textarea 
 } from "@chakra-ui/react";
+
+import toast from "react-hot-toast";
+
+import SubmitButton from "@/components/submit-button";
 
 const initialValues = {
   name: '',
@@ -78,7 +79,7 @@ const Contact = () => {
   return (
     <motion.div
       id="contact"
-      className="pl-10 max-w-xl lg:pt-6"
+      className="px-10 max-w-xl lg:pt-6"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1}}
       transition={{ duration: 0.5 }}
@@ -100,7 +101,14 @@ const Contact = () => {
       <form
         className="flex flex-col gap-2"
         action={async FormData => {
-          await sendEmail(FormData);
+          const { data, error } = await sendEmail(FormData);
+
+          if (error) {
+            toast.error(error);
+            return;
+          }
+
+          toast.success(`I'll get back to you as soon as possible!`);
         }}
       >
         <FormControl
@@ -229,25 +237,14 @@ const Contact = () => {
           </FormErrorMessage>
         </FormControl>
 
-        <Button
-          type="submit"
-          variant='outline'
-          className="font-semibold dark:bg-zinc-300 dark:hover:bg-zinc-100
-          transition duration-200 bg-zinc-900 hover:bg-zinc-700 mt-1.5
-          text-zinc-100 dark:text-zinc-900 py-6 flex items-center gap-1"
-          isLoading={isLoading}
+        <SubmitButton 
           disabled={
-            !values.name    ||
-            !values.email   ||
+            !values.name ||
+            !values.email ||
             !values.subject ||
             !values.message
           }
-        >
-          Submit
-          <FaPaperPlane 
-            size={15}
-          />
-        </Button>
+        />
       </form>
     </motion.div>
   )

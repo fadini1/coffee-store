@@ -39,6 +39,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 
           <ProductList 
             title="Related Items"
+            subtitle="You may also like these products!"
             items={suggestedProducts}
           />
         </div>

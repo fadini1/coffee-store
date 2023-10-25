@@ -41,14 +41,17 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
       open={open}
       onClose={onClose}>
         <div 
-          className="fixed inset-0 bg-black bg-opacity-25" 
+          className="fixed inset-0 bg-black bg-opacity-20" 
         />
 
         <div className="fixed inset-0 z-40 flex">
           <Dialog.Panel className='relative ml-auto flex h-full w-full
-          max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl'>
+          max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl
+          dark:bg-zinc-900'>
             <div className="flex items-center justify-end px-4">
-              <IconButton 
+              <IconButton
+                className="dark:text-zinc-900 dark:hover:bg-zinc-100
+                dark:bg-zinc-300"
                 icon={<X size={15} />}
                 onClick={onClose}
               />

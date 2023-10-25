@@ -50,11 +50,11 @@ const Filter: React.FC<FilterProps> = ({
 
   return (
     <div className="mb-6">
-      <h3 className="text-lg font-semibold">
+      <h3 className="text-lg font-semibold -m-1">
         {name}
       </h3>
 
-      <hr className="my-4" />
+      <hr className="my-2" />
 
       <div className="flex flex-wrap gap-2">
         {data.map((filter) => (
@@ -62,8 +62,9 @@ const Filter: React.FC<FilterProps> = ({
             <Button 
             onClick={() => onClick(filter.id)}
             className={cn(
-            `rounded-md text-sm text-zinc-900 p-2 
-            bg-zinc-100 border border-zinc-300`,
+            `rounded-md text-sm text-zinc-900 px-3 py-1.5
+            bg-zinc-100 border border-zinc-300 font-bold
+            dark:hover:bg-zinc-300 transition`,
             selectedValue === filter.id && 'bg-zinc-900 text-zinc-50'
             )}>
               {filter.name}
