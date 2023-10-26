@@ -169,9 +169,13 @@ const NavbarActions = () => {
           hover:text-zinc-900 text-sm font-medium transition
           dark:hover:font-medium dark:font-semibold duration-200
           text-zinc-100`}
-          onClick={() => router.push(`
-            ${pathname !== '/cart' ? '/cart' : router.back()}
-          `)}
+          onClick={() => {
+            if (pathname !== '/cart') {
+              router.push('/cart');
+            }
+
+            router.back();
+          }}
         >
           {!isHovered && (
             <div

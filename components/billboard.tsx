@@ -26,8 +26,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
             <p
               className="max-w-sm font-medium text-xl text-white"
             >
-              We are the Top-Rated Coffee Shop in the U.S.
-              Delivering the Best Coffee since 1890
+              Delivering the Best Coffee with the Best View since 1890
             </p>
           </div>
         </div>
