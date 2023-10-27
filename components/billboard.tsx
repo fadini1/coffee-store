@@ -1,15 +1,20 @@
 import { Billboard as BillboardType } from "@/types";
 
 interface BillboardProps {
+  billboardDescription: string;
+
   data: BillboardType;
 };
 
-const Billboard: React.FC<BillboardProps> = ({ data }) => {
+const Billboard: React.FC<BillboardProps> = ({
+  data,
+  billboardDescription 
+}) => {
   return (
     <div className="w-full overflow-hidden max-w-none">
       <div 
         className="relative overflow-hidden bg-cover
-        aspect-square md:aspect-[2.4/1] opacity-70"
+        aspect-square md:aspect-[2.4/1] opacity-90"
         style={{ backgroundImage: `url(${data?.imageUrl})` }}
       >
         <div className="h-full w-full flex flex-col justify-center items-center
@@ -18,15 +23,16 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
             <p
               className="font-bold text-3xl sm:text-4xl 
               md:text-5xl lg:text-7xl max-w-xs sm:max-w-xl
-              text-zinc-900"
+              text-black"
             >
               {data?.label}
             </p>
             
             <p
-              className="max-w-sm font-medium text-xl text-white"
+              className="max-w-xs font-medium text-2xl text-white -mt-2
+              bg-black bg-opacity-40 py-1 px-3 rounded-md"
             >
-              Delivering the Best Coffee with the Best View since 1890
+              {billboardDescription}
             </p>
           </div>
         </div>

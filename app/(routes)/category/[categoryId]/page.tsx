@@ -39,11 +39,16 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 
   return (
     <div>
-      <Container>
+      <div
+        className="pb-10"
+      >
         <Billboard 
+          billboardDescription="cock"
           data={category.billboard}
         />
+      </div>
 
+      <Container>
         <div className="px-4 sm:px-6 lg:px-8 pb-16">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-4">
             <MobileFilters 

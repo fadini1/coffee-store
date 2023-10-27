@@ -174,7 +174,9 @@ const NavbarActions = () => {
               router.push('/cart');
             }
 
-            router.back();
+            if (pathname === '/cart') {
+              router.back();
+            }
           }}
         >
           {!isHovered && (
@@ -205,7 +207,7 @@ const NavbarActions = () => {
               <ArrowRightCircle />
             </div>
           )}
-
+          
           {isHovered && pathname === '/cart' && (
             <div
               className='flex gap-2 items-center'

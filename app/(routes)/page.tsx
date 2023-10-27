@@ -20,9 +20,11 @@ const HomePage = async () => {
         className="pb-10"
       >
         <Billboard 
+          billboardDescription="The Best Coffee. The Best Views. The Best Experience."
           data={billboard}
         />
       </div>
+      
       <Container>
         <div className="space-y-10 pb-10">
           <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
