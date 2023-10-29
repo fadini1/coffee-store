@@ -29,8 +29,7 @@ const Billboard: React.FC<BillboardProps> = ({
             </p>
             
             <p
-              className="max-w-xs font-medium text-2xl text-white -mt-2
-              bg-black bg-opacity-40 py-1 px-3 rounded-md"
+              className="max-w-xs font-medium text-2xl text-white -mt-2"
             >
               {billboardDescription}
             </p>

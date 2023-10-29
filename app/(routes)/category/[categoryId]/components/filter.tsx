@@ -64,8 +64,16 @@ const Filter: React.FC<FilterProps> = ({
             className={cn(
             `rounded-md text-sm text-zinc-900 px-3 py-1.5
             bg-zinc-100 border border-zinc-300 font-bold
-            dark:hover:bg-zinc-300 transition`,
-            selectedValue === filter.id && 'bg-zinc-900 text-zinc-50'
+            dark:hover:bg-zinc-300 transition border-none
+            hover:bg-zinc-300 dark:bg-zinc-900 duration-200
+            dark:text-zinc-400 hover:dark:bg-zinc-600
+            hover:dark:text-zinc-300`,
+
+            selectedValue === filter.id && `
+              bg-zinc-900 text-zinc-100 hover:bg-zinc-600
+              dark:bg-zinc-100 dark:text-zinc-900 
+              dark:hover:bg-zinc-400 dark:hover:text-zinc-900
+            `
             )}>
               {filter.name}
             </Button>

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { AiOutlineClear } from 'react-icons/ai';
+
 import { ArrowRightCircle } from "lucide-react";
 
 import { useRouter } from "next/navigation";
@@ -36,11 +38,29 @@ const CartPage = () => {
         <div
           className="px-4 py-10 sm:px-6 lg:px-10"
         >
-          <h1
-            className="text-3xl text-black dark:text-white font-bold"
+          <div
+            className="flex items-center justify-between"
           >
-            Shopping Cart
-          </h1>
+            <h1
+              className="text-3xl text-black dark:text-white font-bold"
+            >
+              Shopping Cart
+            </h1>
+
+            {cart.items.length !== 0 && (
+              <Button
+                variant='destructive'
+                className="flex items-center gap-1
+                bg-red-600"
+                onClick={cart.removeAll}
+              >
+                Clear Cart
+                <AiOutlineClear 
+                  size={20}
+                />
+              </Button>
+            )}
+          </div>
 
           <div
             className="mt-6 gap-x-12 lg:grid lg:grid-cols-12 lg:items-start"

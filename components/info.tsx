@@ -1,6 +1,6 @@
 'use client';
 
-import { ShoppingCart } from "lucide-react";
+import { TbShoppingCartPlus } from "react-icons/tb";
 
 import { Product } from "@/types";
 
@@ -26,54 +26,83 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         {data.name}
       </h1>
 
-      <div className="mt-2 flex items-end justify-between">
-        <p className="text-2xl text-zinc-900 dark:text-white">
-          <Currency 
-            value={data?.price}
-          />
-        </p>
-      </div>
-
-      <hr className="my-4" />
+      <hr className="mb-3 mt-1" />
 
       <div className="flex flex-col gap-y-2">
-        <div className="flex items-center gap-x-2">
-          <h3 className="font-semibold text-black dark:text-white">
-            Size:
-          </h3>
+        <div className="flex items-center gap-x-2 mb-3">
+          <div 
+            className="text-zinc-900 flex items-center
+            bg-zinc-100 py-2 px-4 rounded-md shadow-md 
+            shadow-zinc-300 gap-1 dark:hover:bg-zinc-700
+            transition dark:bg-zinc-900 dark:text-zinc-400
+            dark:shadow-zinc-700 dark:hover:text-zinc-200
+            hover:bg-zinc-300 hover:shadow-zinc-500
+            hover:dark:shadow-zinc-300"
+          >
+            <p
+              className="font-semibold"
+            >
+              Price:
+            </p>
+            <Currency 
+              value={data?.price}
+            />
+          </div>
 
-          <div className="flex gap-2">
-            <div>
-              {data?.size?.name}
-            </div>
+          <div
+            className="text-zinc-900 flex items-center
+            bg-zinc-100 py-2 px-4 rounded-md shadow-md 
+            shadow-zinc-300 gap-1 dark:hover:bg-zinc-700
+            transition dark:bg-zinc-900 dark:text-zinc-400
+            dark:shadow-zinc-700 dark:hover:text-zinc-200
+            hover:bg-zinc-300 hover:shadow-zinc-500
+            hover:dark:shadow-zinc-300"
+          >
+            <h3 className="font-semibold">
+              Size:
+            </h3>
 
             <div>
               {data?.size?.value}
             </div>
           </div>
-        </div>
 
-        <div className="flex items-center gap-x-2">
-          <h3 className="font-semibold text-black dark:text-white">
-            Color:
-          </h3>
+          <div
+            className="text-zinc-900 flex items-center
+            bg-zinc-100 py-2 px-4 rounded-md shadow-md 
+            shadow-zinc-300 gap-1 dark:hover:bg-zinc-700
+            transition dark:bg-zinc-900 dark:text-zinc-400
+            dark:shadow-zinc-700 dark:hover:text-zinc-200
+            hover:bg-zinc-300 hover:shadow-zinc-500
+            hover:dark:shadow-zinc-300"
+          >
+            <h3 className="font-semibold dark:text-white">
+              Color:
+            </h3>
 
-          <div 
-            className="h-6 w-6 rounded-full border border-zinc-500"
-            style={{ backgroundColor: data?.color?.value }}
-          />
-        </div>
+            <div 
+              className="h-6 w-6 rounded-full border border-zinc-500"
+              style={{ backgroundColor: data?.color?.value }}
+            />
+          </div>         
+        </div>   
       </div>
 
-      <div className="mt-4 flex items-center gap-x-2">
-        <Button 
-          className="flex items-center gap-x-2"
-          onClick={onAddToCart}
-        >
-          Add to Cart
-          <ShoppingCart />
-        </Button>
+      <div
+        className="max-w-sm font-medium"
+      >
+        {data.description}
       </div>
+
+      <Button 
+        className="flex items-center gap-2 mt-2 rounded-sm"
+        onClick={onAddToCart}
+      >
+        Add to Cart
+        <TbShoppingCartPlus 
+          size={22}
+        />
+      </Button>
     </div>
   )
 }
