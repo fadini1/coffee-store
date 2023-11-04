@@ -16,22 +16,7 @@ import Link from 'next/link';
 
 import useCart from '@/hooks/use-cart';
 
-import { 
-  Command, 
-  CommandEmpty, 
-  CommandGroup, 
-  CommandInput, 
-  CommandItem, 
-  CommandList, 
-} from './ui/command';
-
-interface NavbarActionsProps {
-  params: {
-    name: string;
-  }
-}
-
-const NavbarActions: React.FC<NavbarActionsProps> = ({params}) => {
+const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
