@@ -15,10 +15,10 @@ import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
 
 import usePreviewModal from '@/hooks/use-preview-modal';
-import useCart from '@/hooks/use-cart';
+import useCart, { CartOrder } from '@/hooks/use-cart';
 
 interface ProductCardProps {
-  data: Product;
+  data: CartOrder;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
