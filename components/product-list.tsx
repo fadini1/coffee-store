@@ -1,4 +1,4 @@
-import { Product } from "@/types";
+import { CartOrder } from "@/hooks/use-cart";
 
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
@@ -7,7 +7,7 @@ interface ProductListProps {
   title: string;
   subtitle?: string;
 
-  items: Product[];
+  items: CartOrder[];
 }
 
 const ProductList: React.FC<ProductListProps> = ({
