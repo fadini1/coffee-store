@@ -16,7 +16,22 @@ import Link from 'next/link';
 
 import useCart from '@/hooks/use-cart';
 
-const NavbarActions = () => {
+import { 
+  Command, 
+  CommandEmpty, 
+  CommandGroup, 
+  CommandInput, 
+  CommandItem, 
+  CommandList, 
+} from './ui/command';
+
+interface NavbarActionsProps {
+  params: {
+    name: string;
+  }
+}
+
+const NavbarActions: React.FC<NavbarActionsProps> = ({params}) => {
   const [isMounted, setIsMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -43,12 +58,13 @@ const NavbarActions = () => {
 
   return (
     <div 
-      className="ml-auto flex items-center space-x-2 relative"
+      className="ml-auto flex items-center justify-center space-x-2 relative"
     >
       <div
-        className='lg:flex items-center text-zinc-500 pr-4 gap-2
+        className='lg:flex items-center text-zinc-500 pr-4 gap-x-2
         dark:text-zinc-400 hidden border-r dark:border-zinc-800'
       >
+
         <Link
           href='/#about-us'
         >
@@ -81,6 +97,7 @@ const NavbarActions = () => {
             Contact
           </Button>
         </Link>
+
       </div>
 
       <div

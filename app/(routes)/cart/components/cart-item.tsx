@@ -1,7 +1,5 @@
 'use client';
 
-import { toast } from 'react-hot-toast';
-
 import { X } from 'lucide-react';
 
 import { Product } from '@/types';

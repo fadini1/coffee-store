@@ -5,10 +5,14 @@ import { Product } from '@/types';
 
 import toast from 'react-hot-toast';
 
-interface CartStore {
-  items: Product[];
+export interface CartOrder extends Product {
+  orderQty: number;
+}
 
-  addItem: (data: Product) => void;
+interface CartStore {
+  items: CartOrder[];
+
+  addItem: (data: CartOrder) => void;
   removeItem: (id: string) => void;
   removeAll: () => void;
 };
@@ -17,17 +21,38 @@ const useCart = create(
   persist<CartStore>((set, get) => ({
     items: [],
     
-    addItem: (data: Product) => {
-      const currentItems = get().items;
-      const existingItem = currentItems.find((item) => item.id === data.id);
+    addItem: (data: CartOrder) => {
+      const currentItems: CartOrder[] = get().items;
 
-      // if (existingItem) {
-      //   return toast('You have already added this Product to your Cart');
-      // }
+      const existingItem: CartOrder | undefined = 
+      currentItems.find((item) => item.id === data.id);
 
-      set({ items: [...get().items, data] });
+      const availableInStock: number = data.quantity - 
+      (existingItem ? existingItem.orderQty : 0);
 
-      toast.success('Product added to your Cart');
+      if (existingItem) {
+        if (availableInStock >= data.orderQty) {
+          existingItem.orderQty += data.orderQty;
+
+          set({ items: [...currentItems] });
+
+          toast.success(`Added ${data.orderQty} to the Product`);
+        } else if (availableInStock > 0) {
+          existingItem.orderQty += availableInStock;
+
+          set({ items: [...currentItems] });
+
+          toast.success(`
+            Added ${availableInStock} to the Cart. Maximum Stock reached.
+          `);
+        } else {
+          toast.error('This Product is currently out of Stock');
+        }
+      } else {
+        set({ items: [...currentItems, data] });
+
+        toast.success(`${data.quantity} copies of this Product added to Cart`);
+      }
     },
 
     removeItem: (id: string) => {

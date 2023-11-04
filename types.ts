@@ -4,6 +4,8 @@ export interface Product {
   description: string;
   price: string;
 
+  quantity: number;
+
   isFeatured: boolean;
 
   category: Category;

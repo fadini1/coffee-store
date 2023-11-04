@@ -5,6 +5,7 @@ import qs from "query-string";
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`;
 
 interface Query {
+  name?: string;
   categoryId?: string;
   sizeId?: string;
   colorId?: string;
@@ -16,6 +17,7 @@ const getProducts = async (query: Query): Promise<Product[]> => {
   const url = qs.stringifyUrl({
     url: URL,
     query: {
+      name: query.name,
       categoryId: query.categoryId,
       sizeId: query.sizeId,
       colorId: query.colorId,
