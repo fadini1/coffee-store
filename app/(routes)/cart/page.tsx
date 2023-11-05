@@ -21,7 +21,6 @@ const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   const router = useRouter();
-
   const cart = useCart();
   
   useEffect(() => {

@@ -23,7 +23,7 @@ const useCart = create(
     
     addItem: (data: CartOrder) => {
       const currentItems: CartOrder[] = get().items;
-
+      
       const existingItem: CartOrder | undefined = 
       currentItems.find((item) => item.id === data.id);
 
@@ -36,22 +36,38 @@ const useCart = create(
 
           set({ items: [...currentItems] });
 
-          toast.success(`Added ${data.orderQty} to the Product`);
+          {data.orderQty === 1 ? 
+            toast.success(
+              `Added ${data.orderQty} item to the Cart`
+            ) : toast.success(
+              `Added ${data.orderQty} items to the Cart`
+            ); 
+          }
         } else if (availableInStock > 0) {
           existingItem.orderQty += availableInStock;
 
           set({ items: [...currentItems] });
 
-          toast.success(`
-            Added ${availableInStock} to the Cart. Maximum Stock reached.
-          `);
+          {data.orderQty === 1 ? 
+            toast.success(
+              `Added ${availableInStock} item to the Cart. This product is now Out of Stock`
+            ) : toast.success(
+              `Added ${availableInStock} items to the Cart. This product is now Out of Stock`
+            ); 
+          }
         } else {
           toast.error('This Product is currently out of Stock');
         }
       } else {
         set({ items: [...currentItems, data] });
 
-        toast.success(`${data.quantity} copies of this Product added to Cart`);
+        {data.orderQty === 1 ? 
+          toast.success(
+            `Added ${data.orderQty} item to the Cart`
+          ) : toast.success(
+            `Added ${data.orderQty} items to the Cart`
+          ); 
+        }
       }
     },
 

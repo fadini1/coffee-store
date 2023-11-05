@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import Button from "@/components/ui/my-button";
 import Currency from "@/components/ui/currency";
 
-import useCart from "@/hooks/use-cart";
+import useCart, { CartOrder } from "@/hooks/use-cart";
 
 import toast from "react-hot-toast";
 
@@ -24,7 +24,7 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({ data }) => {
   const cart = useCart();
 
-  const [quantity, setQuantity] = useState(data?.quantity);
+  const [quantity, setQuantity] = useState(1);
 
   const quantitySchema = z.object({
     quantity: z.number().int({
@@ -39,8 +39,8 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   const handleQuantity = (e: ChangeEvent<HTMLInputElement>) => {
     let error = null;
 
-    if (e.target.value === "") {
-      setQuantity(0);
+    if (quantity === 0) {
+      setQuantity(1);
       error = "Please select how many items you wish to buy";
       toast.error(error);
     } else {
@@ -64,18 +64,6 @@ const Info: React.FC<InfoProps> = ({ data }) => {
       cart.addItem(order);
     }
   };
-  
-  // const onAddToCart = () => {
-  //   if (itemsAvailable !== 0) {
-  //     cart.addItem(data);  
-
-  //     setItemsAvailable(itemsAvailable - 1);
-  //   }
-
-  //   if (itemsAvailable === 0) {
-  //     toast.error('This Product is currently out of Stock!')
-  //   }
-  // }
 
   return (
     <div>
@@ -157,7 +145,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
             </h3>
 
             <div>
-              {data?.quantity}
+              {data.quantity}
             </div>
           </div>        
         </div>   
