@@ -155,7 +155,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
             hover:dark:shadow-zinc-300"
           >
             <h3 className="font-semibold">
-              Size:
+              Size: {data.orderQty}
             </h3>
 
             <div>

@@ -27,10 +27,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
     router.push(`/product/${data?.id}`)
   }
 
-  const goToCategory = () => {
-    router.push(`/category/${data?.category.id}`)
-  }
-
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
 
@@ -89,22 +85,34 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         className='flex items-center gap-1.5'
       >
         <p 
-          className="text-sm text-zinc-600 ml-auto dark:bg-zinc-800 
-          py-1 px-3 rounded-sm dark:text-zinc-400 font-semibold
-          hover:dark:bg-zinc-200 transition cursor-pointer
-          dark:hover:text-zinc-900 text-center w-full flex-1
-          bg-zinc-100 border-zinc-200 border-2
-          hover:bg-white hover:text-zinc-900 hover:border-zinc-300"
-          onClick={goToCategory}
+          className="text-sm text-zinc-100 dark:bg-zinc-800 
+          py-1 px-3 rounded-full dark:text-zinc-400 font-semibold
+          hover:dark:bg-zinc-200 transition border-[1px]
+          dark:hover:text-zinc-900 text-center bg-zinc-900 w-full
+          border-zinc-200 hover:bg-white hover:text-zinc-900
+          hover:border-zinc-300"
         >
           {data.category?.name}
         </p> 
+
+        <p 
+          className="text-sm text-zinc-100 dark:bg-zinc-800 
+          py-1 px-3 rounded-full dark:text-zinc-400 font-semibold
+          hover:dark:bg-zinc-200 transition border-[1px]
+          dark:hover:text-zinc-900 text-center bg-zinc-900 w-full
+          border-zinc-200 hover:bg-white hover:text-zinc-900
+          hover:border-zinc-300"
+        >
+          {data.color?.name}
+        </p> 
+
         <div 
-          className="text-sm ml-auto dark:bg-zinc-800 flex-1 
-          py-1 px-3 rounded-sm dark:text-zinc-400 font-semibold
-          hover:dark:bg-zinc-200 transition text-center border-2
-          dark:hover:text-zinc-900 bg-zinc-100 border-zinc-200
-          text-zinc-500"
+          className="text-sm text-zinc-100 dark:bg-zinc-800 
+          py-1 px-3 rounded-full dark:text-zinc-400 font-semibold
+          hover:dark:bg-zinc-200 transition border-[1px]
+          dark:hover:text-zinc-900 text-center bg-zinc-900 w-full
+          border-zinc-200 hover:bg-white hover:text-zinc-900
+          hover:border-zinc-300"
         >
           <Currency 
             value={data?.price}

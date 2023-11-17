@@ -12,7 +12,7 @@ export const revalidate = 0;
 
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("cab1dfb3-7b7d-410e-8a1e-54efc751346f");
+  const billboard = await getBillboard("e57a83bb-cdc3-4d38-a7a5-c1f3a7e0be15");
 
   return (
     <div>
@@ -20,7 +20,7 @@ const HomePage = async () => {
         className="pb-10"
       >
         <Billboard 
-          billboardDescription="The Best Tea. The Best Views. The Best Experience."
+          billboardDescription="The Best Coffee. The Best Views. The Best Experience."
           data={billboard}
         />
       </div>
