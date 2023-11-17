@@ -1,7 +1,7 @@
 import { Billboard as BillboardType } from "@/types";
 
 interface BillboardProps {
-  billboardDescription: string;
+  billboardDescription?: string;
 
   data: BillboardType;
 };

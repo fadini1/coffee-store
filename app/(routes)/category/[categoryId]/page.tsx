@@ -43,7 +43,6 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
         className="pb-10"
       >
         <Billboard 
-          billboardDescription="cock"
           data={category.billboard}
         />
       </div>
