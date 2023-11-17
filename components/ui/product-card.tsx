@@ -3,11 +3,10 @@
 import { MouseEventHandler } from 'react';
 
 import { BiExpandAlt } from 'react-icons/bi';
-import { TbShoppingCartPlus } from 'react-icons/tb';
 
 import { useRouter } from "next/navigation";
 
-import { Product } from "@/types";
+import { CartOrder } from '@/hooks/use-cart';
 
 import Image from "next/image";
 
@@ -15,7 +14,6 @@ import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
 
 import usePreviewModal from '@/hooks/use-preview-modal';
-import useCart, { CartOrder } from '@/hooks/use-cart';
 
 interface ProductCardProps {
   data: CartOrder;
@@ -23,7 +21,6 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const router = useRouter();
-  const cart = useCart();
   const previewModal = usePreviewModal();
 
   const goToProduct = () => {
@@ -38,12 +35,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
     event.stopPropagation();
 
     previewModal.onOpen(data);
-  }
-
-  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
-    event.stopPropagation();
-
-    cart.addItem(data);
   }
 
   return (
@@ -70,17 +61,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
               onClick={onPreview}
               icon={
                 <BiExpandAlt 
-                  className="text-zinc-900"
-                  size={20}
-                />
-              }
-            />
-
-            <IconButton
-              className='bg-zinc-200 hover:bg-white' 
-              onClick={onAddToCart}
-              icon={
-                <TbShoppingCartPlus 
                   className="text-zinc-900"
                   size={20}
                 />

@@ -13,6 +13,8 @@ interface CartStore {
   items: CartOrder[];
 
   addItem: (data: CartOrder) => void;
+  removeSpecificNumber: (data: CartOrder) => void;
+
   removeItem: (id: string) => void;
   removeAll: () => void;
 };
@@ -70,6 +72,74 @@ const useCart = create(
         }
       }
     },
+
+
+
+
+
+    
+    removeSpecificNumber: (data: CartOrder) => {
+      const currentItems: CartOrder[] = get().items;
+      
+      const existingItem: CartOrder | undefined = 
+      currentItems.find((item) => item.id === data.id);
+
+      const availableInStock: number = data.quantity - 
+      (existingItem ? existingItem.orderQty : 0);
+
+      if (existingItem) {
+        if (availableInStock >= data.orderQty) {
+          existingItem.orderQty -= data.orderQty;
+          
+          if (existingItem.orderQty > 0) {
+            set({ items: [...currentItems] });
+
+            if (existingItem.orderQty > data.quantity) {
+              set({ items: [] });
+            }
+
+            if (existingItem.orderQty <= data.quantity) {
+              {data.orderQty === 1 ? 
+                toast.success(
+                  `Removed ${data.orderQty} item from the Cart`
+                ) : toast.success(
+                  `Removed ${data.orderQty} items from the Cart`
+                ); 
+              }
+            }
+          } else {
+            set({ items: [] });
+          }
+        } else if (availableInStock === 0) {
+          existingItem.orderQty -= data.orderQty;
+
+          set({ items: [...currentItems] }); 
+          
+          {data.orderQty === 1 
+          ? 
+            toast.success(
+              `Removed ${data.orderQty} item from the Cart`
+            ) 
+          : 
+            toast.success(
+              `Removed ${data.orderQty} items from the Cart`
+            ); 
+          
+            if (data.orderQty === 0) {
+              set({ items: [] });
+            }
+          }
+        } else {
+          set({ items: [] });
+        }
+      } else {
+        set({ items: [] });
+      }
+    },  
+
+
+
+
 
     removeItem: (id: string) => {
       set({ items: [...get().items.filter((item) => item.id !== id)] });

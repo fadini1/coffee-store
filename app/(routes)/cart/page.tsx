@@ -48,15 +48,19 @@ const CartPage = () => {
 
             {cart.items.length !== 0 && (
               <Button
+              size='sm'
                 variant='destructive'
-                className="flex items-center gap-1
-                bg-red-600"
+                className="flex items-center gap-1 bg-rose-600 px-4 py-5"
                 onClick={cart.removeAll}
               >
                 Clear Cart
-                <AiOutlineClear 
-                  size={20}
-                />
+                <div
+                  className="mb-1"
+                >
+                  <AiOutlineClear 
+                    size={19}
+                  />  
+                </div>
               </Button>
             )}
           </div>

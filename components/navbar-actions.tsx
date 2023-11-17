@@ -56,6 +56,7 @@ const NavbarActions = () => {
           <Button
             size='sm'
             variant='outline'
+            className='rounded-full'
           >
             About Us
           </Button>
@@ -67,6 +68,7 @@ const NavbarActions = () => {
           <Button
             size='sm'
             variant='outline'
+            className='rounded-full'
           >
             Testimonials
           </Button>
@@ -78,6 +80,7 @@ const NavbarActions = () => {
           <Button
             size='sm'
             variant='outline'
+            className='rounded-full'
           >
             Contact
           </Button>
