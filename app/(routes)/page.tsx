@@ -20,7 +20,6 @@ const HomePage = async () => {
         className="pb-10"
       >
         <Billboard 
-          billboardDescription="The Best Coffee. The Best Views. The Best Experience."
           data={billboard}
         />
       </div>
